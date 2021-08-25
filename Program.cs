@@ -8,10 +8,8 @@ namespace Image_generation
     {
         static void Main(string[] args)
         {
-            double width = 500;
-            double height = 500;
-            double current = 0.4;
-            double growth = 8;
+            double width = 1024;
+            double height = 1024;
 
 
             Bitmap image = new Bitmap(Convert.ToInt32(width), Convert.ToInt32(height));
@@ -23,23 +21,20 @@ namespace Image_generation
                 for (double y = 0; y < height; y++)
                 {
                     int a = 255;
-                    current = pixelGen(current, growth);
-                    int r = (Convert.ToInt32(current));
-                    current = pixelGen(current, growth);
-                    int b = (Convert.ToInt32(current));
-                    current = pixelGen(current, growth);
-                    int g = (Convert.ToInt32(current));
+                    int r = (Convert.ToInt32(pixelGen(10, 10)));
+                    int b = (Convert.ToInt32(pixelGen(x, y)));
+                    int g = (Convert.ToInt32(pixelGen(x, y)));
 
                     image.SetPixel(Convert.ToInt32(x), Convert.ToInt32(y), Color.FromArgb(a, r, g, b));
                 }
             }
             image.Save("images/Image.bmp");
-            Console.WriteLine(current);
+            Console.WriteLine("Done!");
         }
 
-        static double pixelGen(double current, double growth)
+        static double pixelGen(double x, double y)
         {
-            return Math.Abs((growth * current * (1 - current) * 255) % 255);
+            return Math.Abs(Math.Sqrt(x * y) % 255);
         }
     }
 }
