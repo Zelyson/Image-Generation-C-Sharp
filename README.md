@@ -7,7 +7,7 @@ This program allows you to generate images using a function for the individual p
 Remember that this project is for fun and will most likely not be maintained.
 
 ## Generate images
-As this program is meant to be rapidly changed and re-run, it requires you to have the .NET runtime installed.
+As this program is meant to be rapidly changed and re-run, it requires you to have the .NET runtime installed and wont have any releases (probably🤷‍♂️).
 
 To genereate an image just execute 
 ```sh
